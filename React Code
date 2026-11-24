@@ -1,0 +1,37 @@
+
+import React from "react";
+
+function App() {
+  const students = [
+    { name: "Sai", roll: 101, marks: 85 },
+    { name: "Rahul", roll: 102, marks: 32 },
+    { name: "Priya", roll: 103, marks: 65 },
+    { name: "Arjun", roll: 104, marks: 25 }
+  ];
+
+  return (
+    <div>
+      <h1>Student Management System</h1>
+
+      <table border="1" cellPadding="10">
+        <tr>
+          <th>Name</th>
+          <th>Roll Number</th>
+          <th>Marks</th>
+          <th>Result</th>
+        </tr>
+
+        {students.map((s) => (
+          <tr key={s.roll}>
+            <td>{s.name}</td>
+            <td>{s.roll}</td>
+            <td>{s.marks}</td>
+            <td>{s.marks >= 35 ? "Pass" : "Fail"}</td>
+          </tr>
+        ))}
+      </table>
+    </div>
+  );
+}
+
+export default App;
